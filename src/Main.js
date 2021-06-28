@@ -1,13 +1,16 @@
 import React from 'react';
 import HornedBeast from './HornedBeast';
-import HornedBeast1 from './HornedBeast1';
+import Horned from './Horned.json';
 
-class Main extends React.Component{
-    render(){
-        return(
+class Main extends React.Component {
+    render() {
+        return (
             <div>
-                <HornedBeast/>
-                <HornedBeast1/>
+                {Horned.map((item, index) => {
+                    return (
+                        <HornedBeast title={item.title} description={item.description} image_url={item.image_url} alt={item.alt} key={index} />
+                    )
+                })}
             </div>
         )
     }
