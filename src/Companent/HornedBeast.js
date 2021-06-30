@@ -3,7 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+// import SelectedBeast from './SelectedBeast';
 
 
 class HornedBeast extends React.Component {
@@ -11,7 +11,8 @@ class HornedBeast extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            vote : 0
+            vote : 0,
+            
         }
     }
 
@@ -22,8 +23,10 @@ class HornedBeast extends React.Component {
 
     }
 
-
-
+    renderModel=()=>{
+        this.props.renderModel(this.props.keyword)
+    }
+ 
 
     render() {
 
@@ -35,8 +38,9 @@ class HornedBeast extends React.Component {
                 <p>{this.props.description}</p> */}
 
 
-                <Card style={{ width: '18rem'}}>
-                    <Card.Img variant="top" src={this.props.image_url} onClick={this.increaseOfVotes} />
+                <Card style={{ width: '18rem'}} onClick={this.renderModel} >
+                    
+                    <Card.Img variant="top" src={this.props.image_url} onClick={this.props.handleClose} />
                     <Card.Body>
                         <Card.Title>{this.props.Title}</Card.Title>
                         <Card.Text>
@@ -45,7 +49,9 @@ class HornedBeast extends React.Component {
                         <Card.Text>
                         ❤️  {this.state.vote}
                         </Card.Text>
+                    
                         <Button variant="primary" onClick={this.increaseOfVotes}>LIKE</Button>
+                    {/* <SelectedBeast title={this.props.title} description={this.props.description} image_url={this.props.image_url}/> */}
                     </Card.Body>
                 </Card>
                
