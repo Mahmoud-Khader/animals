@@ -18,17 +18,17 @@ class App extends React.Component {
   }
  
 
-  renderModel = (keyword) => {
+  renderModel = (title) => {
     let chosen = data.find(animal => {
-      if (animal.keyword === keyword) {
+      if (animal.title === title) {
         return animal;
       }
-      return chosen;
+      // return chosen;
 
     })
 
     this.setState({
-      // showModel: true,
+     
       chosenAnimal: chosen
     })
     

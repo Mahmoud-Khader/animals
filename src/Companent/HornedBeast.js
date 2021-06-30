@@ -24,7 +24,7 @@ class HornedBeast extends React.Component {
     }
 
     renderModel=()=>{
-        this.props.renderModel(this.props.keyword)
+        this.props.renderModel(this.props.title)
     }
  
 
