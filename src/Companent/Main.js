@@ -19,11 +19,16 @@ class Main extends React.Component {
         event.preventDefault();
         let Data;
         console.log('works')
-        if (event.target.value){
+console.log(typeof event.target.value)
+console.log(typeof Number(event.target.value))
+
+        if (Number(event.target.value)!==0){
 
          Data = data.filter(value => {
                     return value.horns === Number(event.target.value)
                 })
+        } else{
+            Data=data
         }
         
     
